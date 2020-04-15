@@ -21,8 +21,9 @@ a_est <- mean(V1)
 
 
 #nwm co dalej
-#eexp(V1,ci=T,conf.level = 0.95)$interval$limits*(a_est)^2
-
+lambda_limits <- eexp(V1,ci=T,conf.level = 0.95)$interval$limits
+rev(1 / lambda_limits)
+rev(1 / lambda_limits^2)
 
 
 # zad 3 -------------------------------------------------------------------
