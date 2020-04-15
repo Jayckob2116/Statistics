@@ -1,7 +1,10 @@
 
+#big info, dokoñ to i porpaw b³edy( bo jest ich du¿o)
+#
+#
 # zad 1 -------------------------------------------------------------------
 
-#1
+#1 to jest na razie Ÿle
 print(eunif)
 
 #2
@@ -42,7 +45,9 @@ m <- 200
 est <- mean(Centrala$Liczba)
 #2
 #jak do tego doszÅ‚o nie wiem
-probs <- dbinom(sort(unique(Centrala$Liczba)), size = m, prob = p_est)
+#p_est <- mean((Centrala$Liczba)/m)
+
+probs <- dpois(sort(unique(Centrala$Liczba)), lambda = est)
 sum(probs)
 
 #3
@@ -56,13 +61,31 @@ rownames(counts) <- c("empiryczny", "teoretyczny")
 colnames(counts) <- sort(unique(Centrala$Liczba))
 counts
 
+barplot(counts, col=c("red","blue"),legend=rownames(counts),beside = T)
 
 #4
+# wykres kwantyl-kwantyl
+
+qqplot(rpois(length(Centrala$Liczba), lambda = p_est), Centrala$Liczba)
+qqline(Centrala$Liczba, distribution = function(probs) { qpois(probs,lambda =  p_est) })
+# lub
+library(EnvStats)
+EnvStats::qqPlot(Centrala$Liczba,
+                 distribution = "pois",
+                 param.list = list(size = m, prob =est),
+                 add.line = TRUE)
+
 
 #5
+#Nie mam pojêcia..... :| 
 
 #6
-
+#empiryczne
+pp <- mean(Centrala$Liczba<4)
+#teoretyczne
+tpp <-mean((Centrala$Liczba<=4)/m)
+probss <- dbinom(sort(unique(Centrala$Liczba<=4)), size = m, prob = tpp)
+tps <- sum(probs)
 
 # zad 3 -------------------------------------------------------------------
 
