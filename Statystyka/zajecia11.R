@@ -36,12 +36,26 @@ predict_1 <- predict(model,
 
 predict_1
 
-x_temp <- seq(min(bilirubin) - 10, max(bilirubin) + 10, length.out = 50)
-y_temp <- exp(coef(model)[3] + coef(model)[2] * x_temp) / 
-  (1 + exp(coef(model)[3] + coef(model)[2] * x_temp))
-plot(x_temp, y_temp, type = "l", xlab = "x2", ylab = "y", ylim = c(-0.1, 1.1),xlim =c(-5,5))
-points(100,bilirubin, pch = 16)
-#points(, predict_1, pch = 16, col = "red")
+liver_data_new <- data.frame(bilirubin = c(0.9, 2.1, 3.4), ldh = c(100, 200, 300))
+
+model_hat <- coef(model)[1] + 
+     coef(model)[2] * bilirubin + 
+     coef(model)[3] * ldh
+model_temp <- seq(min(model_hat) - 1, max(model_hat) + 2.5, length.out = 100)
+
+condition_temp <- exp(model_temp) / (1 + exp(model_temp))
+
+
+plot(model_temp, condition_temp, type = "l", xlab = "X beta", ylab = "condition", 
+     xlim = c(-6, 9), ylim = c(-0.1, 1.1))
+
+points(model_hat, liver_data$condition, pch = 16)
+
+
+points(coef(model)[1] + 
+         coef(model)[2] * liver_data_new$bilirubin + 
+         coef(model)[3] * liver_data_new$ldh, 
+       predict_1, pch = 16, col = "red")
 
 
 #kod od Prowadzącego
