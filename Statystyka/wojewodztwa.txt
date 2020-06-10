@@ -1,0 +1,18 @@
+wojewodztwo	wspaktzaw	wskzatr	bezrobrej	smniemowl	lifeexp	gestzaludn	pkbcap
+Dolnoslaskie	54,3	41,5	20,6	6,9	74,6	144,8	26620
+KujawskoPomorskie	56,2	45,1	22,3	6,6	74,8	115,1	22474
+Lubelskie	56,1	48,7	17	7,3	74,9	86,8	17591
+Lubuskie	53,2	42,2	23	6,2	74,6	72,1	23241
+Lodzkie	55,9	45,7	17,9	6,1	73,5	141,5	23666
+Malopolskie	54,8	46,1	13,8	5,8	76,2	215,0	21989
+Mazowieckie	54,8	46	13,8	6	75,6	145,0	40817
+Opolskie	53	43	18,7	4,9	75,7	111,3	21347
+Podkarpackie	54	45,8	18,5	7,3	76,2	117,6	17790
+Podlaskie	56,4	48,8	15,6	5,6	75,7	59,4	19075
+Pomorskie	53,4	42,2	19,2	6	75,7	120,2	25308
+Slaskie	51,9	42,4	15,5	7,4	74,5	380,0	27792
+Swietokrzyskie	54,2	44	20,6	5,9	75,4	109,8	19274
+WarminskoMazurskie	52,6	40,8	27,2	6,4	74,7	59,1	19708
+Wielkopolskie	56,6	47,1	14,6	5,9	75,3	113,1	27553
+Zachodniopomorskie	53,5	41,4	25,6	7,1	74,7	74,0	23923
+
